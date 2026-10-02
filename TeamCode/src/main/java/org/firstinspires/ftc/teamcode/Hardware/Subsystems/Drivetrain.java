@@ -14,10 +14,10 @@ public class Drivetrain {
     }
 
     public void TeleOpDrivetrain(Gamepad gamepad, double motorSpeed) {
-        // Negate stick Y because pushing forward gives negative values
-        double y  = -gamepad.left_stick_y;  // Drive forward/backward
-        double x  =  gamepad.left_stick_x;  // Strafe left/right
-        double rx =  gamepad.right_stick_x; // Turn left/right
+        // NEW: Driving/Strafing on Right Stick, Turning on Left Stick
+        double y  =  -gamepad.left_stick_y; // Drive forward/backward
+        double x  =  -gamepad.right_stick_x; // Strafe left/right
+        double rx =  -gamepad.left_stick_x;  // Turn left/right
 
         // Calculate power for standard Mecanum drive
         double lfPow = y + x + rx;

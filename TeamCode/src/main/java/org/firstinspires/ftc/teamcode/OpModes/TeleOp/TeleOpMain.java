@@ -26,22 +26,10 @@ public class TeleOpMain extends OpMode {
     @Override
     public void loop() {
         // Driver controls standard movement
-        drivetrain.TeleOpDrivetrain(gamepad1, 0.5);
+        //drivetrain.TeleOpDrivetrain(gamepad1, 0.95);
+        //rob.servo.setPosition(gamepad1.right_trigger);
 
-        // Override controls if B is pressed
-        if (gamepad1.b) {
-            rob.BackLeft.setPower(1.0);
-            rob.FrontRight.setPower(1.0);
-            rob.BackRight.setPower(1.0);
-            rob.FrontLeft.setPower(1.0);
-        }else{
-            rob.BackLeft.setPower(0.0);
-            rob.FrontRight.setPower(0.0);
-            rob.BackRight.setPower(0.0);
-            rob.FrontLeft.setPower(0.0);
-        }
-
-        telemetry.addData("Status", "Running");
+        telemetry.addData("Gamepad 1 - Right Trigger Value:", gamepad1.right_trigger);
         telemetry.update();
     }
 }
