@@ -26,7 +26,9 @@ public class Tuning {
     }
 }
 
-//This is what came out of the tuning process I just put it down here so you could put it in the correct spot
+
+//This is what came out of the tuning process I just put it down here so you could put it in the correct spot BTW I also put the new giant code on PedroPathingCode.txt
+
 
 public static ForesightConfig foresightConfig = new ForesightConfig(
         c -> {
