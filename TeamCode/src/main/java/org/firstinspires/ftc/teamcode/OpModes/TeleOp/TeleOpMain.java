@@ -26,7 +26,7 @@ public class TeleOpMain extends OpMode {
     @Override
     public void loop() {
         // Driver controls standard movement
-        //drivetrain.TeleOpDrivetrain(gamepad1, 0.95);
+        drivetrain.TeleOpDrivetrain(gamepad1, 0.95);
         //rob.servo.setPosition(gamepad1.right_trigger);
 
         telemetry.addData("Gamepad 1 - Right Trigger Value:", gamepad1.right_trigger);
