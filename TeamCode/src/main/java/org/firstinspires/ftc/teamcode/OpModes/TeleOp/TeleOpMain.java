@@ -16,6 +16,8 @@ public class TeleOpMain extends OpMode {
     Drivetrain drivetrain;
     LLResult llInfo;
 
+    public float Speed = 0;
+
     @Override
     public void init() {
         var = new Variables();
@@ -26,10 +28,17 @@ public class TeleOpMain extends OpMode {
     @Override
     public void loop() {
         // Driver controls standard movement
-        drivetrain.TeleOpDrivetrain(gamepad1, 0.95);
+        //drivetrain.TeleOpDrivetrain(gamepad1, 0.95);
         //rob.servo.setPosition(gamepad1.right_trigger);
 
+        if (gamepad1.right_trigger > 0.1) {
+            rob.LaunchMotor.setPower(gamepad1.right_trigger);
+        }else{
+            rob.LaunchMotor.setPower(0);
+        }
+
         telemetry.addData("Gamepad 1 - Right Trigger Value:", gamepad1.right_trigger);
+        telemetry.addData("Trigger Press:", gamepad1.right_trigger);
         telemetry.update();
     }
 }
